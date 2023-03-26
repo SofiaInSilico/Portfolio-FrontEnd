@@ -1,0 +1,18 @@
+<div class="container-text-center" id="sobre mi">
+    <div class="row row-cols-3">
+      <div class="col-4">
+          <h2>Acerca de</h2>
+      </div>
+      <div class="col-7"></div>
+      <div class="col-1">
+          <button *ngIf="autenticaticionService.isLoggedIn()" (click)="displayUpdateForm = !displayUpdateForm"><i class="fa-solid fa-pen"></i></button>
+      </div>
+      <div class="col-12">
+          <p class="texto-a-derecha">{{acercade.descripcionPersonal}}</p>
+      </div>
+      <div class="col-12" *ngIf="displayUpdateForm">
+        <textarea cols="50" rows="10" [(ngModel)]="acercade.descripcionPersonal" placeholder={{acercade.descripcionPersonal}}></textarea><br>
+        <button  type="button" class="btn btn-success btn-sm" (click)="cargar(acercade)">Editar</button>
+      </div> 
+    </div>  
+</div>

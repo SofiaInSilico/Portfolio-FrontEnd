@@ -1,0 +1,14 @@
+{
+			"id": "1",
+			"nombres": "Esteban Daniel",
+			"apellido": "Belmonte",
+			"fecha_nacimiento": "21/04/1997",
+			"nacionalidad": "Argentino",
+			"mail": "manuel@gmail.com",
+			"sobre_mi": "Matemático, físico e informático argentino considerado por muchos como el padre de la computación en la Argentina.",
+			"ocupacion": "Programador Full Stack",
+			"image_background_header": "https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-black-shading-red-shard-geometry-banner-background-shadingred-debrisred-glowgeometry-image_80184.jpg",
+			"image_perfil": "https://cdn.discordapp.com/attachments/467438830992228352/1016913990506532935/wasd.PNG",
+			"id_domicilio":"2",	
+			"image_banner": "https://media.discordapp.net/attachments/877763749971386368/1016495163884978267/unknown.png"
+}

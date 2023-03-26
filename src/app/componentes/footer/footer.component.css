@@ -1,0 +1,50 @@
+footer {
+  margin-top: 10%;
+  margin-left: 17%; 
+  background: #0B0811;
+    padding: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .social-links {
+    margin-top: 10px;
+  }
+  
+  .social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #ebeff3;
+  }
+  
+  .copywright {
+    margin-top: 20px;
+  }
+  
+  .social-links i {
+    font-size: 2rem;
+  }
+
+  input, ::placeholder {
+    max-width: 500px; /* ancho máximo deseado */
+    margin: 0 auto; /* centrado horizontal */
+    color: white;
+  }
+
+  textarea, ::placeholder {
+    max-width: 500px; /* ancho máximo deseado */
+    margin: 0 auto; /* centrado horizontal */
+    color: white;
+  }
+
+  .white-text {
+    color: white;
+}
+
+  button {
+    margin-top: 4%;
+  }
+
+  .copywright{
+margin: 0;
+  }

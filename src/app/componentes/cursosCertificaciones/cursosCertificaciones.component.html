@@ -1,0 +1,38 @@
+<div class="container-text-center" id="cursos">
+    <div class="row d-flex justify-content-between">
+      <div class="col-10">
+        <h2>Cursos y Certificaciones</h2>
+      </div>
+      <div class="col-2">
+        <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayForm = !displayForm"><i class="fa-solid fa-pen"></i></button>
+        <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayUpdateForm = !displayUpdateForm"><i class="fa-solid fa-pen"></i></button>
+        <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayDeleteForm = !displayDeleteForm"><i class="fa-solid fa-trash"></i></button>
+      </div>
+      <div *ngIf="displayForm">   
+        <input [(ngModel)]="curso.urlImg" type="text" class="border border-success" class="rounded-pill" placeholder="URL de imagen"><br>
+        <input [(ngModel)]="curso.titulo" type="text" class="border border-success" class="rounded-pill" placeholder="Titulo obtenido"><br>
+        <input [(ngModel)]="curso.fecha" type="text" class="border border-success" class="rounded-pill" placeholder="fecha de inicio y final"><br>
+        <input [(ngModel)]="curso.urlCertificado" type="text" class="border border-success" class="rounded-pill" placeholder="Url del certificado"><br>
+        <button type="button" class="btn btn-success btn-sm"  (click)="createCurso()" > Agregar</button>
+    </div>
+      <div *ngFor="let curso of cursos">
+        <div class="col-12">
+          <h5>
+            <img [attr.src]="curso.urlImg" width="70" height="50">{{curso.urlImg}}
+            <span class="fecha">{{curso.fecha}}</span>
+          </h5>
+        </div>
+        <p>{{curso.titulo}}</p><p><a [href]="curso.urlCertificado">Enlance al Certificado</a></p>
+        <div *ngIf="displayUpdateForm">
+          <input [(ngModel)]="curso.urlImg" type="text" placeholder={{curso.urlImg}}><br>
+          <input [(ngModel)]="curso.titulo" type="text" placeholder={{curso.titulo}}><br>
+          <input [(ngModel)]="curso.fecha" type="text" placeholder={{curso.fecha}}><br>
+          <input [(ngModel)]="curso.urlCertificado" type="text" placeholder={{curso.urlCertificado}}><br>
+          <button type="button" class="btn btn-success btn-sm" (click)="cargar(curso)">Editar</button>
+        </div>
+        <div *ngIf="displayDeleteForm">
+          <button type="button" class="btn btn-danger btn-sm" (click)="deleteCurso(curso)"><i class="fa-solid fa-trash"></i> Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>

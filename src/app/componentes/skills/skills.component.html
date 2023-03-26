@@ -1,0 +1,43 @@
+<section  id="habilidades">
+<div class="container-text-center">
+    <div class="row row-cols-4">
+        <div class="col-10">
+            <h2>Habilidades blandas</h2>
+        </div>
+        <div class="col-2">
+            <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayForm = !displayForm"><i class="fa-solid fa-pen"></i></button>
+            <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayUpdateForm = !displayUpdateForm"><i class="fa-solid fa-pen"></i></button>
+            <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayDeleteForm = !displayDeleteForm"><i class="fa-solid fa-trash"></i></button>
+          </div>
+          <div class="col-12" *ngIf="displayForm">   
+            <input [(ngModel)]="skill.nombreSkill" type="text" class="border border-success" class="rounded-pill" placeholder="Nombre de la skill"><br>
+            <input [(ngModel)]="skill.descripcionSkill" type="text" class="border border-success" class="rounded-pill" placeholder="descripcion de la skill"><br>
+            <input [(ngModel)]="skill.urlSkill" type="text" class="border border-success" class="rounded-pill" placeholder="url de la imagen de la skill"><br>
+            <button type="button" class="btn btn-success btn-sm"  (click)="createSkill()" > Agregar</button>
+        </div>
+        <div *ngFor="let skill of skills" >
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img class="imgCard" [src]="skill.urlSkill">
+                        <p class="title">{{skill.nombreSkill}}</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title"></p>
+                        <p>{{skill.descripcionSkill}}</p>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="displayUpdateForm">
+                <input [(ngModel)]="skill.nombreSkill" type="text" placeholder={{skill.nombreSkill}}>
+                <input [(ngModel)]="skill.descripcionSkill" type="text" placeholder={{skill.descripcionSkill}}>
+                <input [(ngModel)]="skill.urlSkill" type="text" placeholder={{skill.urlSkill}}>
+                <button type="button" class="btn btn-success btn" (click)="cargar(skill)"><i class="fa-solid fa-pen"></i></button>
+              </div>
+              <div *ngIf="displayDeleteForm">
+                <button type="button" class="btn btn-danger btn" (click)="deleteSkill(skill)"><i class="fa-solid fa-trash"></i></button>
+              </div>
+        </div>
+    </div>
+</div>
+</section>

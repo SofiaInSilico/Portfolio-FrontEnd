@@ -1,0 +1,40 @@
+<div class="container-text-center" id="experiencia">
+  <div class="row d-flex justify-content-between">
+    <div class="col-10">
+      <h2>Experiencia</h2>
+    </div>
+    <div class="col-2">
+      <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayForm = !displayForm"><i class="fa-solid fa-pen"></i></button>
+      <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayUpdateForm = !displayUpdateForm"><i class="fa-solid fa-pen"></i></button>
+      <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayDeleteForm = !displayDeleteForm"><i class="fa-solid fa-trash"></i></button>
+    </div>
+    <div *ngFor="let experiencia of experiencias">
+      <div class="col-11">
+        <h5><img [attr.src]="experiencia.logoEmpresa" width="40" height="40"> {{experiencia.nombreEmpresa}}</h5>
+        <p>{{experiencia.periodo}}</p>
+      </div>
+      <p class="texto-a-derecha">{{experiencia.tituloPuesto}}</p>
+      <p class="texto-a-derecha">{{experiencia.funcion}}</p>
+
+      <div *ngIf="displayUpdateForm">
+        <input [(ngModel)]="experiencia.nombreEmpresa" type="text" placeholder={{experiencia.nombreEmpresa}}>
+        <input [(ngModel)]="experiencia.periodo" type="text" placeholder={{experiencia.periodo}}>
+        <input [(ngModel)]="experiencia.funcion" type="text" placeholder={{experiencia.funcion}}>
+        <input [(ngModel)]="experiencia.logoEmpresa" type="text" placeholder={{experiencia.logoEmpresa}}>
+        <input [(ngModel)]="experiencia.tituloPuesto" type="text" placeholder={{experiencia.tituloPuesto}}>
+        <button type="button" class="btn btn-success btn-sm" (click)="cargar(experiencia)">Editar</button>
+      </div>
+      <div *ngIf="displayDeleteForm">
+        <button type="button" class="btn btn-danger btn-sm" (click)="deleteExperiencia(experiencia)"><i class="fa-solid fa-trash"></i> Eliminar</button>
+      </div>
+    </div>
+    <div *ngIf="displayForm">   
+      <input [(ngModel)]="experiencia.nombreEmpresa" type="text" class="border border-success" class="rounded-pill" placeholder="Nombre de la empresa">
+      <input [(ngModel)]="experiencia.tituloPuesto" type="text" class="border border-success" class="rounded-pill" placeholder="Titulo del puesto que ocupo">
+      <input [(ngModel)]="experiencia.funcion" type="text" class="border border-success" class="rounded-pill" placeholder="Su funcion dentro de la empresa">
+      <input [(ngModel)]="experiencia.periodo" type="text" class="border border-success" class="rounded-pill" placeholder="periodo dentro de la empresa">     
+      <input [(ngModel)]="experiencia.logoEmpresa" type="text" class="border border-success" class="rounded-pill" placeholder="Url del logo de la empresa">
+      <button type="button" class="btn btn-success btn-sm"  (click)="createExperiencia()" > Agregar</button>
+  </div>
+  </div>
+</div>

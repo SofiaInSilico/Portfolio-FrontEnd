@@ -1,0 +1,37 @@
+<section  id="habilidades">
+    <div class="container-text-center">
+        <div class="row row-cols-4">
+            <div class="col-10">
+                <h2>Herramientas</h2>
+            </div>
+            <div class="col-2">
+                <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayForm = !displayForm"><i class="fa-solid fa-pen"></i></button>
+                <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayUpdateForm = !displayUpdateForm"><i class="fa-solid fa-pen"></i></button>
+                <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayDeleteForm = !displayDeleteForm"><i class="fa-solid fa-trash"></i></button>
+              </div>
+              <div class="col-12" *ngIf="displayForm">   
+                <input [(ngModel)]="herramienta.nombreHerramienta" type="text" class="border border-success" class="rounded-pill" placeholder="descripcion de la herramienta"><br>
+                <input [(ngModel)]="herramienta.urlImg" type="text" class="border border-success" class="rounded-pill" placeholder="url de la imagen de la herramienta"><br>
+                <button type="button" class="btn btn-success btn-sm"  (click)="createHerramientas()" > Agregar</button>
+            </div>
+            <div *ngFor="let herramienta of herramientas" >
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img class="imgCard" [src]="herramienta.urlImg">
+                            <p class="title">{{herramienta.nombreHerramienta}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="displayUpdateForm">
+                    <input [(ngModel)]="herramienta.nombreHerramienta" type="text" placeholder={{herramienta.nombreHerramienta}}>
+                    <input [(ngModel)]="herramienta.urlImg" type="text" placeholder={{herramienta.urlImg}}>
+                    <button type="button" class="btn btn-success btn" (click)="cargar(herramienta)"><i class="fa-solid fa-pen"></i></button>
+                  </div>
+                  <div *ngIf="displayDeleteForm">
+                    <button type="button" class="btn btn-danger btn" (click)="deleteHerramientas(herramienta)"><i class="fa-solid fa-trash"></i></button>
+                  </div>
+            </div>
+        </div>
+    </div>
+    </section>
