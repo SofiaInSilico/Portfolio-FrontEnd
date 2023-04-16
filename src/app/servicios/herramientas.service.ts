@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Herramientas } from '../componentes/herramientas/herramientas';
 
 @Injectable({
@@ -8,11 +9,18 @@ import { Herramientas } from '../componentes/herramientas/herramientas';
 })
 export class HerramientasService {
 
-  private url:string="http://localhost:8080/api/herramientas";
+  private url:string=environment.URL+"api/herramientas";
+  private urlLista:string=this.url+"/traer";
+  private urlCrear:string=this.url+"/crear";
+  private urlEliminar:string=this.url+"/borrar";
+  private urlActualizar:string=this.url+"/editar";
+
+  /*private url:string="http://localhost:8080/api/herramientas";
   private urlLista:string="http://localhost:8080/api/herramientas/traer"
   private urlActualizar:string="http://localhost:8080/api/herramientas/editar"  
   private urlEliminar:string="http://localhost:8080/api/herramientas/borrar"
-  private urlCrear:string="http://localhost:8080/api/herramientas/crear"
+  private urlCrear:string="http://localhost:8080/api/herramientas/crear"*/
+  
   constructor (private http:HttpClient) { }
 
   //obtener la lista Herramientas

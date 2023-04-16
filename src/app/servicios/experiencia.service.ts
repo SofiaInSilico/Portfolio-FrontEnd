@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Experiencia } from '../componentes/experiencia/experiencia';
 
 @Injectable({
@@ -8,12 +9,17 @@ import { Experiencia } from '../componentes/experiencia/experiencia';
   })
 export class ExperienciaService{
 
+  private url:string=environment.URL+"api/experiencia";
+    private urlLista:string=this.url+"/traer";
+    private urlCrear:string=this.url+"/crear";
+    private urlEliminar:string=this.url+"/borrar";
+    private urlActualizar:string=this.url+"/editar";
 
-    private url:string="http://localhost:8080/api/experiencia";
+    /*private url:string="http://localhost:8080/api/experiencia";
     private urlLista:string="http://localhost:8080/api/experiencia/traer";
     private urlCrear:string="http://localhost:8080/api/experiencia/crear";
     private urlEliminar:string="http://localhost:8080/api/experiencia/borrar"
-    private urlActualizar:string="http://localhost:8080/api/experiencia/editar"
+    private urlActualizar:string="http://localhost:8080/api/experiencia/editar"*/
 
     constructor(private http:HttpClient) {}
 

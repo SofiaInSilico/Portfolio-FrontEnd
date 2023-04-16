@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Persona } from '../componentes/encabezado/persona';
 
 @Injectable({
@@ -8,9 +9,14 @@ import { Persona } from '../componentes/encabezado/persona';
 })
 export class PersonaService {
 
-  private url:string="http://localhost:8080/api/persona";
+  private url:string=environment.URL+"api/persona";
+  private urlLista:string=this.url+"/traer";
+  private urlActualizar:string=this.url+"/editar";
+
+  /*private url:string="http://localhost:8080/api/persona";
   private urlLista:string="http://localhost:8080/api/persona/traer"
-  private urlActualizar:string="http://localhost:8080/api/persona/editar"  
+  private urlActualizar:string="http://localhost:8080/api/persona/editar"*/  
+  
   constructor (private http:HttpClient) { }
 
   //obtener la lista Persona

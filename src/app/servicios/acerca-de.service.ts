@@ -1,16 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { AcercaDe } from '../componentes/acerca-de/acercade';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AcercaDeService {
+  
+  private url:string=environment.URL+"api/acercade";
+    private urlLista:string=this.url+"/traer";
+    private urlActualizar:string=this.url+"/editar";
 
-  private url:string="http://localhost:8080/api/acercade";
+  /*private url:string="http://localhost:8080/api/acercade";
   private urlLista:string="http://localhost:8080/api/acercade/traer"
-  private urlActualizar:string="http://localhost:8080/api/acercade/editar"  
+  private urlActualizar:string="http://localhost:8080/api/acercade/editar"*/  
   constructor (private http:HttpClient) { }
 
   //obtener la lista Acerca De

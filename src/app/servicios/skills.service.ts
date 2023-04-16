@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import {Skills} from '../componentes/skills/skills';
 
 @Injectable({
@@ -9,11 +10,17 @@ import {Skills} from '../componentes/skills/skills';
 
 export class SkillsService {
 
-    private url:string="http://localhost:8080/api/skill"
+  private url:string=environment.URL+"api/skill";
+  private urlLista:string=this.url+"/traer";
+  private urlCrear:string=this.url+"/crear";
+  private urlEliminar:string=this.url+"/borrar";
+  private urlActualizar:string=this.url+"/editar";
+
+    /*private url:string="http://localhost:8080/api/skill"
     private urlLista:string="http://localhost:8080/api/skill/traer"
     private urlCrear:string="http://localhost:8080/api/skill/crear"
     private urlEliminar:string="http://localhost:8080/api/skill/borrar"
-    private urlActualizar:string="http://localhost:8080/api/skill/editar"
+    private urlActualizar:string="http://localhost:8080/api/skill/editar"*/
 
     constructor(private http:HttpClient) {}
 

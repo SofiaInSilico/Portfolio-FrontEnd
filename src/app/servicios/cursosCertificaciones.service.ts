@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Curso } from '../componentes/cursosCertificaciones/cursosCertificaciones';
 
 @Injectable({
@@ -8,12 +9,18 @@ import { Curso } from '../componentes/cursosCertificaciones/cursosCertificacione
   })
 export class CursoService{
 
+  private url:string=environment.URL+"api/CursosCertificaciones";
+    private urlLista:string=this.url+"/traer";
+    private urlCrear:string=this.url+"/crear";
+    private urlEliminar:string=this.url+"/borrar";
+    private urlActualizar:string=this.url+"/editar";
 
-    private url:string="http://localhost:8080/api/CursosCertificaciones";
+
+    /*private url:string="http://localhost:8080/api/CursosCertificaciones";
     private urlLista:string="http://localhost:8080/api/CursosCertificaciones/traer";
     private urlCrear:string="http://localhost:8080/api/CursosCertificaciones/crear";
     private urlEliminar:string="http://localhost:8080/api/CursosCertificaciones/borrar"
-    private urlActualizar:string="http://localhost:8080/api/CursosCertificaciones/editar"
+    private urlActualizar:string="http://localhost:8080/api/CursosCertificaciones/editar"*/
 
     constructor(private http:HttpClient) {}
 
