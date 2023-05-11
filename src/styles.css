@@ -1,29 +1,21 @@
 body {
-    /* background-image: url(https://img.freepik.com/foto-gratis/impresionante-foto-mar-cielo-oscuro-purpura-lleno-estrellas_181624-23013.jpg?w=740&t=st=1677787163~exp=1677787763~hmac=a617c54734f1d8e24e9ce60862cbf8a8a0c7e620d726c3a7c389aa0f96b944ce); */
      background-repeat: none;
      background-size: cover;
      background-attachment: fixed;
-       /* background: rgba(46, 60, 111,44); */
-       background: #151021;   
-       font-family: 'Charm', sans-serif;
-       font-size: 1.2em;
+     background-color: transparent;
+       background: black;   
+       font-family: 'Teko', sans-serif;
+       font-size: 1.5em;
+       border: 1px solid #d0d0d0;     
+       margin: 2% 2% 2% 2%;                                                                                      
+   }
 
-                                                                                            
-   }
-   header,main {
-      /* margin-left: 10px;  */  
-   } 
-   div {
-       /*margin: 1%; */
-   }
    .row {
-      /* background: rgb(46, 60, 111);*/
-      /* background: rgba(71, 45, 125, 49); */
-      margin-left: 26%; 
-     /* background: rgba(46, 60, 111,44); */
-     background: rgba(255, 255, 255, 0.1);
+
+      margin-left: 5%; 
+     border-color: white;
+    
        margin-bottom: 14px;
-      /* border: 2px solid rgba(19, 18, 18, 0.664);*/
        border-radius: 30px; 
        transition-duration: 1.5s;
        color: white;
@@ -34,7 +26,6 @@ body {
        
    }
    h2, h1, button {
-       /*font-family: 'Qonquer', sans-serif;*/
             font-stretch: extra-expanded;                                     
    }
    .enlaces {
@@ -43,16 +34,14 @@ body {
    }
    .enlaces:hover{
        border-bottom: 1px solid;
-       color: rgb(29, 32, 65);
+       border-color: white;
    }
    .enlaces:active{
-       color: rgb(117, 134, 175);
+       color: rgb(255, 255, 255);
    }
    a,h3,h4,h5,h6,p {
-      /* margin-left: 10px; */
-    /*   font-family: 'Raleway', sans-serif;*/
-       font-size: 1em;
-       margin: 4%;
+    font-size: 0.8em;
+    margin: 1%;
        text-align: justify;
    }
    span {
@@ -66,7 +55,7 @@ body {
      position: absolute;
      right: 0;
      top: 0;
-       width: 50%; 
+       width: 60%; 
        max-width: 100px;
        min-width: 70px;
        z-index: 1;
@@ -87,20 +76,8 @@ body {
    }
    header {
      position: relative;
-     margin-left: 17.5%;
    }
-   button {
-       background: transparent;
-       border: transparent;
-   }
-  .btn {
-    margin-bottom: 2%;
-  }
-   .boton_edicion{
-   position: relative;
-   top:50px;
-   right: 10px;
-   }  
+
    .perfil{
        width: 10%;
        height:100%; 
@@ -108,21 +85,13 @@ body {
        border-radius: 50%;
    }
    
-   /*h6 {
-       position: relative;
-       left: 100px;
-   }*/  
    .row:hover {
-      /* background: rgba(45, 104, 125,49); */
-     /* background: rgba(47, 112, 181, 71); */
-     background: rgba(46, 60, 111,44);
-      /* color: rgb(24, 30, 46); */
+     background: rgba(255, 255, 255, 0.283);
+
    } 
    
    input, ::placeholder, textarea {
-   background-image: url(https://img.freepik.com/foto-gratis/impresionante-foto-mar-cielo-oscuro-purpura-lleno-estrellas_181624-23013.jpg?w=740&t=st=1677787163~exp=1677787763~hmac=a617c54734f1d8e24e9ce60862cbf8a8a0c7e620d726c3a7c389aa0f96b944ce);
-     /* background-color: rgb(0, 0, 0); */
-      color:white;
+      color:black;
    }
    
    .flip-card {
@@ -164,23 +133,16 @@ body {
        height: 100%;
        -webkit-backface-visibility: hidden;
        backface-visibility: hidden;
-      /* border: 1px solid coral; */
       border: 1px solid ;
        border-radius: 1rem;
      }
      
      .flip-card-front {
-      /* background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%,
-          rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%); */
           background: white;
-       /*color: coral; */
        color: black;
      }
      
      .flip-card-back {
-      /* background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
-          bisque 40%, rgb(255, 185, 160) 78%);
-       color: white; */
        background: black;
        color: white;
        transform: rotateY(180deg);
@@ -216,12 +178,10 @@ body {
        position: absolute;
        left: 0;
        bottom: 0;
-         /* edit the width to fit card */
        max-width: 100%;
        padding: 20px;
        background: #f2f2f2;
        border-top-left-radius: 20px;
-         /* edit here to change the height of the content box */
        transform: translateY(150px);
        transition: transform .25s;
      }
@@ -265,94 +225,8 @@ body {
      }
      
      
-     
-     button {
-       position: relative;
-       padding: 5px 10px;
-       border-radius: 7px;
-       border: 1px solid rgb(61, 106, 255);
-     /*  font-size: 14px; */
-       text-transform: uppercase;
-       font-weight: 600;
-       letter-spacing: 2px;
-       background: transparent;
-       color: #fff;
-       overflow: hidden;
-       box-shadow: 0 0 0 0 transparent;
-       -webkit-transition: all 0.2s ease-in;
-       -moz-transition: all 0.2s ease-in;
-       transition: all 0.2s ease-in;
-     }
-     
-     button:hover {
-       background: rgb(61, 106, 255);
-       box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
-       -webkit-transition: all 0.2s ease-out;
-       -moz-transition: all 0.2s ease-out;
-       transition: all 0.2s ease-out;
-     }
-     
-     button:hover::before {
-       -webkit-animation: sh02 0.5s 0s linear;
-       -moz-animation: sh02 0.5s 0s linear;
-       animation: sh02 0.5s 0s linear;
-     }
-     
-     button::before {
-       content: '';
-       display: block;
-       width: 0px;
-       height: 86%;
-       position: absolute;
-       top: 7%;
-       left: 0%;
-       opacity: 0;
-       background: #fff;
-       box-shadow: 0 0 50px 30px #fff;
-       -webkit-transform: skewX(-20deg);
-       -moz-transform: skewX(-20deg);
-       -ms-transform: skewX(-20deg);
-       -o-transform: skewX(-20deg);
-       transform: skewX(-20deg);
-     }
-     
-     @keyframes sh02 {
-       from {
-         opacity: 0;
-         left: 0%;
-       }
-     
-       50% {
-         opacity: 1;
-       }
-     
-       to {
-         opacity: 0;
-         left: 100%;
-       }
-     }
-     
-     button:active {
-       box-shadow: 0 0 0 0 transparent;
-       -webkit-transition: box-shadow 0.2s ease-in;
-       -moz-transition: box-shadow 0.2s ease-in;
-       transition: box-shadow 0.2s ease-in;
-     }
-     
-     #sidebar {
-       position: fixed;
-       top: 0;
-       left: 0;
-       bottom: 0;
-       width: 20%; /* Ancho del sidebar */
-      /* background: rgba(46, 60, 111,44); */
-      background: #0B0812;
-      z-index: 1;
-   }
-     
-   /* Media queries para ajustar el tamaño de fuente en diferentes tamaños de pantalla */
    @media (max-width: 768px) {
-     /* Ajusta el tamaño de fuente para pantallas pequeñas */
+
      body {
        font-size: 14px;
      }
@@ -367,7 +241,7 @@ body {
    }
    
    @media (max-width: 480px) {
-     /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+
      body {
        font-size: 12px;
      }
@@ -385,14 +259,75 @@ body {
    a {
     margin: 10px;
     padding: 10px;
-    background-color: black;
-    color: white;
+    background-color: transparent;
     border-radius: 5px;
     text-decoration: none;
     transition: all 300ms;
+    color:white;
   }
      
-  a:hover {
-    background-color: rgb(224, 104, 104);
-    color: black;
+  *a:hover {
+    border: 1px solid #d0d0d0;
+    color: white;
   }
+
+  .spinner {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  border-top-color: #202020;
+  animation: spinner 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+.spinner div {
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  border-radius: 100%;
+  position: absolute;
+  animation: spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.spinner div:nth-child(1) {
+  left: 0;
+  top: 0;
+}
+
+.spinner div:nth-child(2) {
+  right: 0;
+  top: 0;
+}
+
+.spinner div:nth-child(3) {
+  right: 0;
+  bottom: 0;
+}
+
+.spinner div:nth-child(4) {
+  left: 0;
+  bottom: 0;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

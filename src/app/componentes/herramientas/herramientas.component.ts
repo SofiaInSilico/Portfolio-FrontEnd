@@ -18,11 +18,12 @@ displayForm: boolean = false;
 displayUpdateForm: boolean = false;
 displayDeleteForm:boolean = false;
 postId: any;
-
+cargando = false;
 
 constructor(private herramientasService:HerramientasService, private router:Router, private activatedRoute:ActivatedRoute, private http: HttpClient, public autenticaticionService: AutenticacionService) { }
 
 createHerramientas():void {
+  this.cargando = true;
 this.herramientasService.create(this.herramienta).subscribe(
 data => {
 this.herramientas.push(data);
@@ -31,7 +32,9 @@ this.displayForm = false;
 this.router.navigate(['porfolio'])
 }
 );
-location.reload();
+setTimeout(() => {
+  location.reload();
+}, 5000);
 }
 
 cargar(herramienta: Herramientas):void{
@@ -42,13 +45,16 @@ cargar(herramienta: Herramientas):void{
 }
 
 deleteHerramientas(herramienta: Herramientas):void {
+this.cargando = true;
 this.herramientasService.delete(herramienta.id).subscribe(
 data => {
 this.herramientas = this.herramientas.filter(e => e !== herramienta);
 this.displayDeleteForm = false;
 }
 );
-location.reload();
+setTimeout(() => {
+  location.reload();
+}, 5000);
 }
 
 

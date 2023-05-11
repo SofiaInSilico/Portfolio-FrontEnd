@@ -18,17 +18,21 @@ displayForm: boolean = false;
 displayUpdateForm: boolean = false;
 displayDeleteForm:boolean = false;
 postId: any;
+cargando = false;
 
 
 constructor(private experienciaService:ExperienciaService, private router:Router, private activatedRoute:ActivatedRoute, private http: HttpClient, public autenticaticionService: AutenticacionService) { }
 
 createExperiencia():void {
+this.cargando = true;
 this.experienciaService.create(this.experiencia).subscribe(
 data => {
 this.experiencias.push(data);
 this.experiencia = new Experiencia();
 this.displayForm = false;
-location.reload();
+setTimeout(() => {
+  location.reload();
+}, 5000);
 }
 );
 }
@@ -41,13 +45,16 @@ cargar(experiencia: Experiencia):void{
 }
 
 deleteExperiencia(experiencia: Experiencia):void {
+this.cargando = true;
 this.experienciaService.delete(experiencia.id).subscribe(
 data => {
 this.experiencias = this.experiencias.filter(e => e !== experiencia);
 this.displayDeleteForm = false;
 }
 );
-location.reload();
+setTimeout(() => {
+  location.reload();
+}, 5000);
 }
 
 

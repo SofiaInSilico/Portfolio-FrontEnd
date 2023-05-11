@@ -1,29 +1,28 @@
-<div id="sidebar" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="col-12">
-        <img [src]="persona.urlPerfil" class="perfil" alt="foto de perfil">
-    </div> 
-        <p>{{persona.nombre}}</p>
-        <p>{{persona.titulo}}</p>
-      <button onclick="location.href='/portfolio#sobre mi';">Sobre mi</button><br>
-      <button onclick="location.href='/portfolio#experiencia';">Experiencia</button><br>
-      <button onclick="location.href='/portfolio#estudios';">Estudios</button><br>
-      <button onclick="location.href='/portfolio#habilidades';">Habilidades</button><br> 
-     <button onclick="location.href='/portfolio#proyectos';">Proyectos</button><br>
-      <button *ngIf="autenticaticionService.isLoggedIn()" (click)="displayUpdateForm = !displayUpdateForm" ><i class="fa-solid fa-pen"></i> Editar</button>
-      <button *ngIf="!autenticaticionService.isLoggedIn()" (click)="redigirLogin()">Ingresar</button><br>
-      <button *ngIf="autenticaticionService.isLoggedIn()" (click)="autenticaticionService.cerrarSesion()">Cerrar sesión</button><br>
-  </div>
 <header>
-    <div> 
-    <img src="https://imgur.com/ADVl0u6" alt="Banner" class="banner_img img-fluid">
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav" >
+          <a class="nav-link text-white" aria-current="page" onclick="location.href='/portfolio#sobre mi';"> Sobre mí</a>
+          <a class="nav-link text-white" onclick="location.href='/portfolio#experiencia';">Expreriencia</a>
+          <a class="nav-link text-white" onclick="location.href='/portfolio#estudios';">Estudios</a>
+          <a class="nav-link text-white" onclick="location.href='/portfolio#habilidades';">Habilidades</a>
+          <a class="nav-link text-white" onclick="location.href='/portfolio#proyectos';">Proyectos</a>
+          <a class="nav-link text-white" *ngIf="autenticaticionService.isLoggedIn()" (click)="displayUpdateForm = !displayUpdateForm" ><i class="fa-solid fa-pen"></i>Editar</a>
+          <a class="nav-link text-white" *ngIf="!autenticaticionService.isLoggedIn()" (click)="redigirLogin()">Ingresar</a>
+          <a class="nav-link text-white" *ngIf="autenticaticionService.isLoggedIn()" (click)="autenticaticionService.cerrarSesion()">Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <div class="banner2"> 
+    <img src="https://i.imgur.com/7guWgSq.jpg" alt="Banner" class="banner_img img-fluid">
     <img class="logo" src="https://desa.argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1660276176/APLogo-20-20.png"  alt="logo argentina programa">
     <h1 class="medio">{{persona.nombre}}</h1>
     <h2 class="medio">{{persona.titulo}}</h2>
     </div>
     <div class="row align-items-center" id="encabezado">             
-    <!--div class="col-12">
-        <img [src]="persona.urlPerfil" class="perfil" alt="foto de perfil">
-    </div-->
 
     <div class="col-12" *ngIf="displayUpdateForm">
         <input [(ngModel)]="persona.nombre" type="text" placeholder={{persona.nombre}}>

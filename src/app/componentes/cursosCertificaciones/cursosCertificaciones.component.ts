@@ -18,17 +18,21 @@ displayForm: boolean = false;
 displayUpdateForm: boolean = false;
 displayDeleteForm:boolean = false;
 postId: any;
+cargando = false;
 
 
 constructor(private cursoService:CursoService, private router:Router, private activatedRoute:ActivatedRoute, private http: HttpClient, public autenticaticionService: AutenticacionService) { }
 
 createCurso():void {
+this.cargando = true;
 this.cursoService.create(this.curso).subscribe(
 data => {
 this.cursos.push(data);
 this.curso = new Curso();
 this.displayForm = false;
-location.reload();
+setTimeout(() => {
+    location.reload();
+  }, 5000);
 }
 );
 }
@@ -41,13 +45,16 @@ cargar(curso: Curso):void{
 }
 
 deleteCurso(curso: Curso):void {
+this.cargando = true;
 this.cursoService.delete(curso.id).subscribe(
 data => {
 this.cursos = this.cursos.filter(e => e !== curso);
 this.displayDeleteForm = false;
 }
 );
-location.reload();
+setTimeout(() => {
+    location.reload();
+  }, 5000);
 }
 
 

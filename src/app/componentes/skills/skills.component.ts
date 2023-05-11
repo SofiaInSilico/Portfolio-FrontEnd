@@ -18,11 +18,13 @@ displayForm: boolean = false;
 displayUpdateForm: boolean = false;
 displayDeleteForm:boolean = false;
 postId: any;
+cargando = false;
 
 
 constructor(private skillService:SkillsService, private router:Router, private activatedRoute:ActivatedRoute, private http: HttpClient, public autenticaticionService: AutenticacionService) { }
 
 createSkill():void {
+this.cargando = true;
 this.skillService.create(this.skill).subscribe(
 data => {
 this.skills.push(data);
@@ -31,7 +33,9 @@ this.displayForm = false;
 this.router.navigate(['porfolio'])
 }
 );
-location.reload();
+setTimeout(() => {
+  location.reload();
+}, 5000);
 }
 
 cargar(skill: Skills):void{
@@ -42,13 +46,16 @@ cargar(skill: Skills):void{
 }
 
 deleteSkill(skill: Skills):void {
+this.cargando = true;
 this.skillService.delete(skill.id).subscribe(
 data => {
 this.skills = this.skills.filter(e => e !== skill);
 this.displayDeleteForm = false;
 }
 );
-location.reload();
+setTimeout(() => {
+  location.reload();
+}, 5000);
 }
 
 

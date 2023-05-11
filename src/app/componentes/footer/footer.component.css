@@ -1,10 +1,9 @@
 footer {
   margin-top: 10%;
-  margin-left: 17%; 
-  background: #0B0811;
     padding: 20px;
     text-align: center;
     color: white;
+    background-image: url("https://i.imgur.com/e6IEu6w.jpg");
   }
   
   .social-links {
@@ -26,14 +25,14 @@ footer {
   }
 
   input, ::placeholder {
-    max-width: 500px; /* ancho máximo deseado */
-    margin: 0 auto; /* centrado horizontal */
+    max-width: 500px; 
+    margin: 0 auto; 
     color: white;
   }
 
   textarea, ::placeholder {
-    max-width: 500px; /* ancho máximo deseado */
-    margin: 0 auto; /* centrado horizontal */
+    max-width: 500px; 
+    margin: 0 auto; 
     color: white;
   }
 

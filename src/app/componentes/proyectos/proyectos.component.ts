@@ -18,17 +18,21 @@ displayForm: boolean = false;
 displayUpdateForm: boolean = false;
 displayDeleteForm:boolean = false;
 postId: any;
+cargando = false;
 
 
 constructor(private proyectoService:ProyectoService, private router:Router, private activatedRoute:ActivatedRoute, private http: HttpClient, public autenticaticionService: AutenticacionService) { }
 
 createProyecto():void {
+this.cargando = true;
 this.proyectoService.create(this.proyecto).subscribe(
 data => {
 this.proyectos.push(data);
 this.proyecto = new Proyecto();
 this.displayForm = false;
-location.reload();
+setTimeout(() => {
+  location.reload();
+}, 5000);
 }
 );
 }
@@ -41,13 +45,16 @@ cargar(proyecto: Proyecto):void{
 }
 
 deleteProyecto(proyecto: Proyecto):void {
+this.cargando = true;
 this.proyectoService.delete(proyecto.id).subscribe(
 data => {
 this.proyectos = this.proyectos.filter(e => e !== proyecto);
 this.displayDeleteForm = false;
 }
 );
-location.reload();
+setTimeout(() => {
+  location.reload();
+}, 5000);
 }
 
 

@@ -1,16 +1,24 @@
 <div class="container-text-center" id="estudios">
   <div class="row d-flex justify-content-between">
+    <div *ngIf="cargando" class="overlay">
+      <div class="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
     <div class="col-10">
       <h2>Educacion</h2>
     </div>
     <div class="col-2">
-      <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayForm = !displayForm"><i class="fa-solid fa-pen"></i></button>
+      <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayForm = !displayForm"><i class="fa-solid fa-plus"></i></button>
       <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayUpdateForm = !displayUpdateForm"><i class="fa-solid fa-pen"></i></button>
       <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayDeleteForm = !displayDeleteForm"><i class="fa-solid fa-trash"></i></button>
     </div>
     <div *ngIf="displayForm">   
       <input [(ngModel)]="educacion.nombreInstituto" type="text" class="border border-success" class="rounded-pill" placeholder="Nombre instituto"><br>
-      <input [(ngModel)]="educacion.titulo" type="text" class="border border-success" class="rounded-pill" placeholder="Titulo obtenido"><br>
+      <input [(ngModel)]="educacion.titulo" type="text" clangss="border border-success" class="rounded-pill" placeholder="Titulo obtenido"><br>
       <input [(ngModel)]="educacion.fechaInicio" type="text" class="border border-success" class="rounded-pill" placeholder="fecha de inicio y final"><br>
       <input [(ngModel)]="educacion.logo" type="text" class="border border-success" class="rounded-pill" placeholder="url del logo de la institución"><br>     
       <input [(ngModel)]="educacion.urlCertificado" type="text" class="border border-success" class="rounded-pill" placeholder="Url del certificado"><br>

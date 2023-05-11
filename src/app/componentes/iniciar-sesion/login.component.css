@@ -1,10 +1,14 @@
-.gradient-custom {
-    background-color: #1a1a1a;
-    background-image: linear-gradient(to bottom right, #0964ec, #570bd3);
-  }
+
+#logHover {
+
+  background-repeat: none;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url("https://i.imgur.com/7guWgSq.jpg");
+ }
   
   .form-login {
-   /* background-color: rgba(240, 27, 27, 0.05); */
+
     border-radius: 10px;
     padding: 30px;
   }
@@ -28,8 +32,3 @@
     background-color: rgba(250, 245, 245, 0.2);
   }
   
-  .row {
-    margin-left: 4%;
-    margin-bottom: 0%;
-    margin-top: 3%;
-  }

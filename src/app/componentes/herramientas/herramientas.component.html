@@ -1,11 +1,19 @@
 <section  id="habilidades">
     <div class="container-text-center">
+        <div *ngIf="cargando" class="overlay">
+            <div class="spinner">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
         <div class="row row-cols-4">
             <div class="col-10">
                 <h2>Herramientas</h2>
             </div>
             <div class="col-2">
-                <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayForm = !displayForm"><i class="fa-solid fa-pen"></i></button>
+                <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayForm = !displayForm"><i class="fa-solid fa-plus"></i></button>
                 <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayUpdateForm = !displayUpdateForm"><i class="fa-solid fa-pen"></i></button>
                 <button *ngIf="autenticaticionService.isLoggedIn()" type="button" class="btn btn-outline-light" (click)="displayDeleteForm = !displayDeleteForm"><i class="fa-solid fa-trash"></i></button>
               </div>
@@ -14,15 +22,14 @@
                 <input [(ngModel)]="herramienta.urlImg" type="text" class="border border-success" class="rounded-pill" placeholder="url de la imagen de la herramienta"><br>
                 <button type="button" class="btn btn-success btn-sm"  (click)="createHerramientas()" > Agregar</button>
             </div>
-            <div *ngFor="let herramienta of herramientas" >
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img class="imgCard" [src]="herramienta.urlImg">
-                            <p class="title">{{herramienta.nombreHerramienta}}</p>
-                        </div>
-                    </div>
-                </div>
+
+            <div *ngFor="let herramienta of herramientas" class="card" style="width: 18rem; height: max-content;">
+              <img [src]="herramienta.urlImg" class="card-img-top text-white" alt="Img habilidad">
+              <div class="card-body">
+                <p class="card-text title text-white">{{herramienta.nombreHerramienta}}</p>
+              </div>
+            </div>
+
                 <div *ngIf="displayUpdateForm">
                     <input [(ngModel)]="herramienta.nombreHerramienta" type="text" placeholder={{herramienta.nombreHerramienta}}>
                     <input [(ngModel)]="herramienta.urlImg" type="text" placeholder={{herramienta.urlImg}}>
@@ -32,6 +39,5 @@
                     <button type="button" class="btn btn-danger btn" (click)="deleteHerramientas(herramienta)"><i class="fa-solid fa-trash"></i></button>
                   </div>
             </div>
-        </div>
     </div>
     </section>
